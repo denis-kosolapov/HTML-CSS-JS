@@ -1,0 +1,240 @@
+<script type="text/javascript">
+ 
+ function calc() { 
+ 
+ var type_cms = document.getElementById("type_cms");
+
+ var type_bay = document.getElementById("type_bay");
+ 
+ var type_design = document.getElementById("type_design"); 
+ 
+ var type_host = document.getElementById("type_host"); 
+ 
+ var soprovozhdenie = document.getElementById("soprovozhdenie");
+ 
+ var content = document.getElementById("content");
+ 
+ var seo = document.getElementById("seo");
+ 
+ var type_forum = document.getElementById("type_forum");
+ 
+ var comment = document.getElementById("comment");
+ 
+ var gallery = document.getElementById("gallery");
+ 
+ var eshop = document.getElementById("eshop");
+ 
+ var eshop_content = document.getElementById("eshop_content");
+ 
+ //Result
+ var result = document.getElementById("result_cms"); 
+ 
+ var result = document.getElementById("result_design");
+ 
+ var result = document.getElementById("soprovozhdenie");
+ 
+ var result = document.getElementById("content");
+ 
+ var result = document.getElementById("seo");
+ 
+ var result = document.getElementById("type_forum");
+ 
+ var result = document.getElementById("comment");
+ 
+ var result = document.getElementById("gallery");
+ 
+ var result = document.getElementById("eshop");
+ 
+ var result = document.getElementById("eshop_content");
+ 
+ var result = document.getElementById("result");
+ 
+ var price_cms = 0;
+  var price_bay = 0; 
+ var price_design = 0; 
+ var price_host = 0;
+ var price_soprovozhdenie = 0;
+ var price_content = 0;
+ var price_seo = 0;
+ var price_forum = 0;
+ var price_comment = 0;
+ var price_gallery = 0;
+ var price_eshop = 0;
+ var price_eshop_content = 0;
+ var price = 0; 
+ price_cms += parseInt(type_cms.options[type_cms.selectedIndex].value);
+ price_bay += parseInt(type_bay.options[type_bay.selectedIndex].value); 
+ price_design += parseInt(type_design.options[type_design.selectedIndex].value); 
+ price_host += (type_host.checked == true) ? parseInt(type_host.value) : 0;
+ price_soprovozhdenie += parseInt(soprovozhdenie.value)*1000;
+ price_content += parseInt(content.value)*500;
+ price_seo += (seo.checked == true) ? parseInt(seo.value) : 0;
+ price_forum += parseInt(type_forum.options[type_forum.selectedIndex].value); 
+ price_comment += (comment.checked == true) ? parseInt(comment.value) : 0;
+ price_gallery += (gallery.checked == true) ? parseInt(gallery.value) : 0;
+ price_eshop += (eshop.checked == true) ? parseInt(eshop.value) : 0;
+ price_eshop_content += (eshop_content.checked == true) ? parseInt(eshop_content.value) : 0;
+ price=price_cms + price_bay + price_design + price_host + price_soprovozhdenie + price_content + price_seo + price_forum + price_comment + price_gallery + price_eshop + price_eshop_content;
+ 
+ 
+ result_cms.innerHTML = price_cms;
+ price_bay.innerHTML = price_bay;  
+ result_design.innerHTML = price_design;
+ result_host.innerHTML = price_host;
+ result_soprovozhdenie.innerHTML = price_soprovozhdenie;
+ result_content.innerHTML = price_content;
+ result_seo.innerHTML = price_seo;
+ result_forum.innerHTML = price_forum;
+ result_comment.innerHTML = price_comment;
+ result_gallery.innerHTML = price_gallery;
+ result_eshop.innerHTML = price_eshop;
+ result_eshop_content.innerHTML = price_eshop_content;
+ result.innerHTML = price;
+ } 
+</script>
+ 
+ <table>
+ <tr>
+ <td width="150">Базовая стоимость сайта с системой управления (CMS)</td>
+ <td width="250">Информация о CMS JoomlaCMS Joomla!<br/>
+Информация о CMS WordpressWordPress <br/>
+Информация о CMS Drupal</td>
+<td width="100"><select onchange="calc()" id="type_cms">
+ <option value="0">Выбрать</option>
+ <option value="5000">Joomla</option>
+ <option value="6000">Wordpress</option>
+ <option value="7000">Drupal</option>
+ <option value="1000">Html</option>
+ </select>
+</td>
+<td width="200"><span id="result_cms">0</span> руб.</td>
+ </tr>
+ <!-- Выбор -->
+
+ <tr>
+ 	<td width="150">Выбрать дополнительные опции</td>
+ 	<td width="250">Выбрать способ оплаты</td>
+ 	<td width="100"><select onchange="calc()" id="type_bay">
+ 		<option value="0">Выбрать</option>
+ 		<option value="0">Кредитная карта банка Тинькоф</option>
+ 		<option value="0">Оплата наличными</option>
+ 	</select>
+ 	</td>
+ </tr>
+
+ <!-- 2design// -->
+ 
+ <tr>
+ <td width="150">Дизайн сайта</td>
+ <td width="250"></td>
+<td width="100"><select onchange="calc()" id="type_design">
+ <option value="0">Выбрать</option>
+ <option value="5000">Индивидуальный дизайн</option>
+ <option value="1000">Шаблонный дизайн</option>
+ <option value="550">Ваш дизайн</option>
+ </select>
+</td>
+<td width="200"><span id="result_design">0</span> руб.</td>
+ </tr>
+ 
+ <!-- 3hosting// -->
+ 
+ <tr>
+ <td width="150">Хостинг + регистрация доменного имени сайта (на 12 месяцев)</td>
+ <td width="250">Выбор хостинга и доменного имени</td>
+<td width="100"><input type="checkbox" onchange="calc()" value="1500" id="type_host" /></td>
+<td width="200"><span id="result_host">0</span> руб.</td>
+ </tr>
+ 
+<!--4soprovozhdenie//--> 
+ 
+ <tr>
+ <td width="150">Дальнейшее сопровождение сайта (количество месяцев)</td>
+ <td width="250">Подробнее о сопровождении</td>
+<td width="100"><input type="text" id="soprovozhdenie" value="0" onchange="calc()" /></td>
+<td width="200"><span id="result_soprovozhdenie">0</span> руб.</td>
+ </tr>
+ 
+<!--5content//--> 
+ 
+ <tr>
+ <td width="150">Наполнение контентом (количество статей)</td>
+ <td width="250">Написание и (или) размещение статей и материалов на сайте</td>
+<td width="100"><input type="text" id="content" value="0" onchange="calc()" /></td>
+<td width="200"><span id="result_content">0</span> руб.</td>
+ </tr>
+ 
+ <!-- 6SEO// -->
+ 
+ <tr>
+ <td width="150">Поисковая оптимизация</td>
+ <td width="250">Комплекс мер для поднятия позиций сайта в результатах выдачи поисковых систем</td>
+<td width="100"><input type="checkbox" onchange="calc()" value="1000" id="seo" /></td>
+<td width="200"><span id="result_seo">0</span> руб.</td>
+ </tr>
+ 
+<!-- 7forum// -->
+ 
+ <tr>
+ <td width="150">Установка и настройка форума</td>
+ <td width="250"></td>
+<td width="100"><select onchange="calc()" id="type_forum">
+ <option value="0">Без форума</option>
+ <option value="1500">Форум встроенные в сайт</option>
+ <option value="1000">Внешний форум</option>
+ </select>
+</td>
+<td width="200"><span id="result_forum">0</span> руб.</td>
+ </tr>
+ 
+ <!-- 8comment// -->
+ 
+ <tr>
+ <td width="150">Установка компонента комментариев к статьям</td>
+ <td width="250"></td>
+<td width="100"><input type="checkbox" onchange="calc()" value="100" id="comment" /></td>
+<td width="200"><span id="result_comment">0</span> руб.</td>
+ </tr>
+ 
+ <!-- 9gallery// -->
+ 
+ <tr>
+ <td width="150">Фотогалерея</td>
+ <td width="250">Установка, настройка и размещение изображений на сайте в виде фотогалереи</td>
+<td width="100"><input type="checkbox" onchange="calc()" value="1000" id="gallery" /></td>
+<td width="200"><span id="result_gallery">0</span> руб.</td>
+ </tr>
+ 
+<tr style="background-color:#eeeeee;border:1px solid #c6c6c6">
+ <th style="border:none;padding:7px;background-color:#eeeeee">Интернет-магазин</th>
+ <td style="border:none"></td>
+ <td style="border:none"></td>
+ <td style="border:none"></td>
+</tr>
+ 
+<!-- 10eshop// -->
+ 
+ <tr>
+ <td width="150">Установка и настройка интернет-магазина (только для CMS Joomla или Wordpress)</td>
+ <td width="250"></td>
+<td width="100"><input type="checkbox" onchange="calc()" value="5000" id="eshop" /></td>
+<td width="200"><span id="result_eshop">0</span> руб.</td>
+ </tr>
+ 
+ <!-- 10eshop// -->
+ 
+ <tr>
+ <td width="150">Наполнение интернет-магазина контентом</td>
+ <td width="250"></td>
+<td width="100"><input type="checkbox" onchange="calc()" value="5000" id="eshop_content" /></td>
+<td width="200"><span id="result_eshop_content">0</span> руб.</td>
+ </tr>
+ 
+<!-- Итог --> 
+ <tr>
+ <td width="250" class="td_result">ИТОГО:</td>
+ <td width="150"></td>
+<td width="100"></td>
+ <td class="td_result"><span id="result">0</span> руб.</td>
+ </tr>
+ </table>
